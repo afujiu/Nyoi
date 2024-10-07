@@ -1,0 +1,21 @@
+{
+  "name": "flyhalf",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "crypto-js": "^4.2.0",
+    "encoding-japanese": "^1.0.30",
+    "express": "^4.19.2",
+    "jsencrypt": "^3.3.2",
+    "node-rsa": "^1.1.1",
+    "request": "^2.88.2",
+    "socket.io": "^4.7.5",
+    "sqlite": "^5.1.1",
+    "sqlite3": "^5.1.7"
+  },
+  "engines": {
+    "node": "18.x"
+  }
+}
