@@ -1,0 +1,41 @@
+<html>
+    <head>
+    </head>
+    <body>
+        Nyoi
+        <button id="getField">getField</button>
+        <button id="create">create</button>
+        <button id="read">read</button>
+        <button id="update">update</button>
+        <div>
+            <textarea id="record"></textarea>
+        </div>
+    </body>
+    <script type="module">
+        import {KintoneApi} from "./KintoneApi.js"
+        let kintone = new KintoneApi("","","")
+        
+        //フィールド取得
+        document.getElementById("getField").addEventListener("click",async(e)=>{
+            console.log(await kintone.getField())
+            document.getElementById("record").value = JSON.stringify(kintone.templete)
+        })
+
+        //読み取り
+        document.getElementById("read").addEventListener("click",async(e)=>{
+            const templete = await kintone.read()
+            document.getElementById("record").value = JSON.stringify(templete)
+        })
+
+        //作成
+        document.getElementById("create").addEventListener("click",async(e)=>{
+            const record=document.getElementById("record").value
+            console.log(await kintone.create(JSON.parse(record)))
+        })
+        //修正
+        document.getElementById("update").addEventListener("click",async(e)=>{
+            const record=document.getElementById("record").value
+            console.log(await kintone.update(JSON.parse(record)))
+        })
+    </script>
+</html>
